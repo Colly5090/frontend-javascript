@@ -1,4 +1,4 @@
-interface Teacher {
+export interface Teacher {
     readonly firstName: string;   // Cannot be changed after initialization
     readonly lastName: string;    // Cannot be changed after initialization
     fullTimeEmployee: boolean;    // Must always be defined
@@ -9,7 +9,7 @@ interface Teacher {
 
     // To extend the properties in teachers into directors
 
-interface Directors extends Teacher {
+export interface Directors extends Teacher {
     numberOfReports: number;
     }
 
@@ -19,7 +19,7 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+export const printTeacher: printTeacherFunction = (firstName, lastName) => {
     return `${firstName[0]}. ${lastName}`;
     }
 
@@ -36,7 +36,7 @@ interface studentMethods {
 }
 
 
-class StudentClass implements studentMethods {
+export class StudentClass implements studentMethods {
     firstName: string;
     lastName: string;
 

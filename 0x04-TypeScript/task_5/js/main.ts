@@ -1,37 +1,33 @@
-/// <reference path="./subjects/Cpp.ts" />
-/// <reference path="./subjects/Java.ts" />
-/// <reference path="./subjects/React.ts" />
+// Define a unique type for MajorCredits
+export interface MajorCredits {
+  credits: number;
+  _brand: void;
+}
 
-// Create and export a constant cpp for Cpp Subject
-export const cpp = new Subjects.Cpp();
+// Define a unique type for MinorCredits
+export interface MinorCredits {
+  credits: number;
+  _brand: void;
+}
 
-// Create and export a constant java for Java Subject
-export const java = new Subjects.Java();
+// Function to sum major credits
+export function sumMajorCredits(
+  subject1: MajorCredits,
+  subject2: MajorCredits
+): MajorCredits {
+  return {
+    credits: subject1.credits + subject2.credits,
+    _brand: undefined,
+  };
+}
 
-// Create and export a constant react for React Subject
-export const react = new Subjects.React();
-
-// Create and export one Teacher object cTeacher with optional experienceTeachingC = 10
-export const cTeacher: Subjects.Teacher = {
-  firstName: 'John',
-  lastName: 'Doe',
-  experienceTeachingC: 10,
-};
-
-
-console.log('C++');
-cpp.setTeacher(cTeacher);
-console.log(cpp.getRequirements());
-console.log(cpp.getAvailableTeacher());
-
-
-console.log('Java');
-java.setTeacher(cTeacher);
-console.log(java.getRequirements());
-console.log(java.getAvailableTeacher());
-
-
-console.log('React');
-react.setTeacher(cTeacher);
-console.log(react.getRequirements());
-console.log(react.getAvailableTeacher());
+// Function to sum minor credits
+export function sumMinorCredits(
+  subject1: MinorCredits,
+  subject2: MinorCredits
+): MinorCredits {
+  return {
+    credits: subject1.credits + subject2.credits,
+    _brand: undefined, 
+  };
+}
